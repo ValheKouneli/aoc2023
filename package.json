@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "day00": "ts-node src/day00.ts",
+    "day01": "ts-node src/day01.ts"
   },
   "keywords": [],
   "author": "",

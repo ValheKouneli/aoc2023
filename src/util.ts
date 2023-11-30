@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-function readFromFile(fileName: string): string[] {
+export function readFromFile(fileName: string): string[] {
   try {
     const filePath = path.join(__dirname, fileName);
     const data = fs.readFileSync(filePath, "utf-8");
@@ -11,6 +11,3 @@ function readFromFile(fileName: string): string[] {
     return [];
   }
 }
-
-const input = readFromFile("input.txt");
-console.log("input:", input);
