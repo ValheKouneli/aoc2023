@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "day00": "ts-node src/day00.ts",
-    "day01": "ts-node src/day01.ts"
+    "day01": "ts-node src/day01.ts",
+    "day02": "ts-node src/day02.ts"
   },
   "keywords": [],
   "author": "",
