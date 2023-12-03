@@ -1,100 +1,290 @@
-Game 1: 1 green, 1 blue, 1 red; 3 green, 1 blue, 1 red; 4 green, 3 blue, 1 red; 4 green, 2 blue, 1 red; 3 blue, 3 green
-Game 2: 9 blue, 7 red; 5 blue, 6 green, 1 red; 2 blue, 10 red, 9 green; 3 green, 14 red, 5 blue; 8 red, 3 blue, 4 green; 8 green, 14 blue, 10 red
-Game 3: 11 green, 8 blue, 7 red; 3 green, 4 red, 9 blue; 3 red, 4 green, 8 blue; 11 green, 1 red, 16 blue
-Game 4: 3 blue, 20 green, 2 red; 1 green, 3 red, 3 blue; 1 blue, 9 green; 4 red, 17 green; 12 green, 3 red
-Game 5: 2 red, 1 blue, 4 green; 6 blue, 2 green; 2 red, 5 green
-Game 6: 1 green, 7 red; 1 blue, 3 green, 1 red; 1 blue, 2 red, 2 green; 1 blue, 1 green, 2 red; 3 red; 8 red, 1 green, 1 blue
-Game 7: 13 green, 5 blue, 1 red; 9 green, 6 blue; 11 green, 2 blue, 2 red
-Game 8: 2 red, 11 green, 6 blue; 5 green, 3 blue; 3 blue, 3 green, 5 red; 5 blue, 9 green, 1 red
-Game 9: 3 blue, 5 green, 8 red; 4 green, 19 blue, 4 red; 4 red, 17 blue
-Game 10: 2 green, 8 red, 4 blue; 1 green, 5 red, 9 blue; 3 green, 2 red, 4 blue; 2 green, 5 red, 2 blue; 6 green, 4 blue; 10 blue, 8 green, 8 red
-Game 11: 3 green, 1 blue, 9 red; 2 blue, 1 red, 9 green; 1 blue, 9 green, 7 red; 8 red, 6 green
-Game 12: 5 green; 8 green, 7 red, 1 blue; 8 blue, 8 green, 14 red; 6 red, 14 green; 14 green, 3 red, 8 blue
-Game 13: 7 red, 2 green, 4 blue; 5 red, 3 blue, 8 green; 10 green, 1 red, 4 blue; 7 green, 1 red, 13 blue; 11 green, 12 blue, 2 red
-Game 14: 9 green, 4 red; 7 green, 4 blue, 5 red; 2 red, 2 green; 3 green, 2 red, 8 blue; 7 green, 6 red, 8 blue
-Game 15: 19 blue, 1 green; 1 red, 5 blue; 3 green, 8 blue; 1 red, 13 blue, 3 green
-Game 16: 8 red, 11 blue, 3 green; 14 green, 1 red, 12 blue; 6 green, 1 red, 6 blue; 1 red, 6 blue, 17 green; 2 green, 8 blue, 3 red
-Game 17: 3 red, 1 blue; 1 blue, 2 red, 1 green; 1 red; 3 red, 2 green
-Game 18: 8 green, 2 red; 1 blue, 6 red; 8 green, 7 red, 2 blue; 1 red; 6 green, 1 blue, 3 red
-Game 19: 4 blue, 2 green; 4 green, 18 blue, 2 red; 14 green, 4 blue; 1 red, 3 blue, 18 green; 11 blue, 3 red; 14 green, 4 red, 6 blue
-Game 20: 7 blue; 1 blue, 6 green, 1 red; 1 red, 3 blue, 10 green; 7 green, 4 blue, 1 red; 6 green, 6 blue, 1 red; 1 red, 5 blue, 17 green
-Game 21: 11 blue, 9 red; 8 red, 2 blue; 2 red, 11 blue, 2 green
-Game 22: 4 green, 9 blue, 2 red; 2 blue, 8 green; 2 green, 2 red, 6 blue
-Game 23: 7 green, 7 blue; 6 blue, 11 green; 1 red, 14 green; 15 green, 4 blue, 1 red; 1 red, 5 blue, 3 green; 1 red, 1 blue, 13 green
-Game 24: 5 green, 2 red, 2 blue; 1 blue, 3 green, 2 red; 2 blue, 7 green, 3 red
-Game 25: 16 red, 8 green; 2 red, 3 blue; 10 green, 5 red, 4 blue; 9 red, 7 green; 7 red, 6 blue
-Game 26: 3 red, 1 green; 5 red, 1 blue, 10 green; 8 red, 5 green
-Game 27: 3 red, 2 blue; 6 red, 8 green; 5 green, 13 red, 2 blue; 4 red, 1 blue, 8 green; 14 red, 1 blue, 3 green; 2 red, 1 green, 2 blue
-Game 28: 9 red, 10 blue; 9 red, 9 blue; 1 green, 6 red, 4 blue; 12 blue, 3 green, 2 red; 2 green, 12 red, 8 blue
-Game 29: 4 red, 15 blue; 5 blue, 3 green, 6 red; 1 green, 9 blue, 1 red; 5 green, 8 red, 1 blue
-Game 30: 4 green, 2 blue, 10 red; 1 red, 5 green, 6 blue; 15 red, 2 blue; 5 green, 10 red, 8 blue
-Game 31: 6 green, 2 blue, 2 red; 5 green, 6 red, 6 blue; 3 blue, 5 red, 1 green; 4 green, 6 red, 9 blue; 4 red; 3 green, 1 red, 3 blue
-Game 32: 8 green, 17 red, 17 blue; 11 red, 6 green, 13 blue; 14 red, 1 green, 1 blue; 1 green, 17 red, 4 blue; 5 green, 14 red, 15 blue; 15 blue, 8 green
-Game 33: 2 red, 14 blue; 3 blue, 17 red, 4 green; 9 blue, 8 red; 5 red, 2 blue; 4 green, 16 red, 5 blue; 15 blue, 6 green, 17 red
-Game 34: 12 green, 2 red, 1 blue; 3 blue, 9 red, 13 green; 2 blue, 17 green, 6 red; 6 green, 4 red, 3 blue; 2 red, 1 blue; 7 green, 3 blue, 7 red
-Game 35: 4 blue, 5 red, 5 green; 6 green, 12 red, 6 blue; 3 green, 18 red, 2 blue; 13 red, 6 green, 9 blue; 3 green, 10 blue, 17 red; 1 green, 3 blue, 16 red
-Game 36: 4 green, 3 blue, 1 red; 3 green, 3 red, 10 blue; 1 red, 8 green, 8 blue; 3 blue, 1 red; 2 red, 2 blue, 14 green
-Game 37: 16 blue, 1 green; 9 blue; 7 red, 13 blue
-Game 38: 6 green, 8 red, 3 blue; 5 blue, 4 green, 6 red; 5 blue, 4 green; 5 red, 3 green, 1 blue; 6 green, 4 blue, 15 red
-Game 39: 10 blue, 4 green; 1 blue, 7 green, 5 red; 8 red, 2 blue
-Game 40: 2 blue, 2 green, 6 red; 8 green, 4 red, 2 blue; 4 blue, 12 green, 6 red
-Game 41: 4 green, 2 blue, 11 red; 6 red, 11 green; 4 blue, 2 red, 19 green; 3 green, 2 blue, 1 red
-Game 42: 2 blue, 2 green, 4 red; 1 red, 4 blue, 8 green; 5 red, 2 blue, 15 green; 10 green, 5 red, 1 blue; 10 green, 1 blue; 2 blue
-Game 43: 10 red, 19 green, 11 blue; 11 green, 1 red, 2 blue; 13 red, 6 blue, 3 green; 12 red, 10 green; 5 red, 19 green, 8 blue; 2 red, 10 green, 3 blue
-Game 44: 7 blue, 8 red; 1 green, 12 red; 19 red, 3 green, 5 blue
-Game 45: 12 red; 2 green, 5 red, 3 blue; 10 green, 2 blue, 4 red; 10 green, 7 red
-Game 46: 4 blue, 4 red, 2 green; 7 green, 6 blue; 6 blue, 1 red, 4 green
-Game 47: 4 green, 8 red, 1 blue; 4 green, 1 blue, 11 red; 14 red, 3 blue, 10 green; 15 green, 2 blue, 7 red
-Game 48: 6 blue, 3 green, 1 red; 15 blue, 11 red, 3 green; 17 blue, 14 red; 2 green, 13 red; 5 red, 2 green, 4 blue
-Game 49: 7 blue, 1 green; 8 red, 2 blue, 1 green; 1 red, 1 green, 2 blue; 3 red, 2 blue, 1 green
-Game 50: 13 red, 2 green, 2 blue; 13 red, 6 green, 1 blue; 12 red, 8 green; 1 red, 3 green; 13 red; 2 blue, 11 red, 2 green
-Game 51: 7 green, 4 blue, 2 red; 3 red, 7 green, 5 blue; 10 green, 2 blue; 14 green, 3 red, 4 blue; 2 blue, 2 red, 10 green
-Game 52: 7 blue, 10 red; 7 red, 4 blue, 8 green; 12 red, 4 blue, 7 green; 7 green, 7 red; 17 green, 11 blue, 6 red; 8 green, 8 red, 18 blue
-Game 53: 6 green, 2 red; 10 red, 13 green; 2 blue, 3 green, 5 red; 4 red, 4 green; 8 green, 1 red; 13 green, 2 blue, 10 red
-Game 54: 5 red, 9 green, 5 blue; 6 red, 15 green, 10 blue; 8 blue, 3 green, 1 red; 12 blue, 3 red, 13 green
-Game 55: 10 green, 4 red, 2 blue; 2 green, 1 red, 2 blue; 2 blue, 4 red, 8 green; 5 blue, 3 green
-Game 56: 7 green, 9 red, 2 blue; 4 red, 1 blue, 3 green; 3 red, 4 blue, 6 green; 7 green, 2 red; 5 blue, 2 red, 3 green; 7 green, 7 red, 5 blue
-Game 57: 11 blue, 5 green, 6 red; 18 red, 15 green, 10 blue; 5 green, 14 red, 6 blue; 1 green, 11 red, 7 blue; 11 blue, 7 red, 12 green
-Game 58: 9 red, 6 blue, 6 green; 6 blue, 12 red, 3 green; 8 red, 1 blue, 20 green; 3 green, 3 red, 15 blue; 4 blue, 15 green, 3 red
-Game 59: 18 red, 4 blue, 7 green; 11 blue, 19 red, 7 green; 10 red, 9 blue, 1 green; 8 red, 12 green, 4 blue; 6 green, 5 blue, 12 red; 2 blue, 14 green, 2 red
-Game 60: 1 blue, 9 green, 6 red; 1 red, 1 blue, 13 green; 15 green, 4 red; 1 blue, 2 red, 15 green
-Game 61: 9 green, 3 red, 2 blue; 1 green, 5 blue, 10 red; 17 red, 9 green, 5 blue; 10 red, 5 green, 5 blue
-Game 62: 4 red, 2 green; 2 red; 5 red, 2 green, 2 blue; 3 green, 1 blue; 2 blue, 3 red, 3 green
-Game 63: 4 red, 6 blue, 2 green; 3 green, 1 red, 5 blue; 7 blue, 5 green
-Game 64: 8 blue, 12 red; 1 green, 6 red, 14 blue; 12 red, 13 blue
-Game 65: 2 red, 8 green; 1 blue, 2 red, 5 green; 2 blue, 3 green; 1 green, 1 red
-Game 66: 6 red, 8 blue, 2 green; 6 blue, 7 green; 7 green, 11 blue; 5 green, 4 red, 10 blue; 5 blue, 4 green; 6 blue, 6 green, 5 red
-Game 67: 12 green, 4 red; 2 blue, 11 green, 6 red; 9 red, 2 green, 6 blue; 2 red, 8 blue, 18 green; 17 green, 7 blue, 6 red; 12 blue, 9 green
-Game 68: 3 red, 9 blue, 1 green; 3 green, 11 blue; 12 blue, 9 red; 6 red, 13 green, 8 blue
-Game 69: 3 red, 8 green, 3 blue; 6 green, 3 red; 11 green, 3 blue; 4 red, 3 green; 7 green, 4 blue, 6 red; 1 red, 2 blue
-Game 70: 6 green, 4 blue; 7 red, 9 green, 14 blue; 12 red; 9 green, 10 red; 6 green, 16 blue, 8 red
-Game 71: 4 blue, 6 red, 9 green; 6 green, 2 red; 8 green, 4 blue, 2 red; 1 red, 3 blue, 8 green; 9 green, 3 red, 3 blue; 4 red, 6 green
-Game 72: 3 red, 3 green, 3 blue; 4 red, 1 green, 3 blue; 2 red, 2 green, 1 blue
-Game 73: 7 green, 6 red, 7 blue; 2 green, 4 blue; 2 blue, 15 green, 4 red; 1 blue, 4 green, 2 red; 7 blue, 14 green
-Game 74: 4 green, 2 red, 2 blue; 9 blue, 13 green, 4 red; 10 green, 12 blue, 7 red; 4 blue, 8 green, 7 red
-Game 75: 3 red, 3 green; 3 green, 12 red; 18 red, 2 blue; 3 green, 9 red, 1 blue; 14 red, 1 green; 15 red
-Game 76: 1 blue, 7 red, 8 green; 3 blue, 4 red, 1 green; 6 green, 6 red
-Game 77: 2 green, 8 red; 5 green, 11 red, 1 blue; 5 red, 2 blue, 2 green; 6 red, 5 green, 2 blue; 11 red, 2 green, 1 blue; 2 red, 8 green, 2 blue
-Game 78: 1 blue, 4 red, 10 green; 13 green, 4 red, 9 blue; 12 green, 6 blue, 3 red; 5 blue, 8 green, 6 red
-Game 79: 9 red, 1 blue, 17 green; 9 green, 6 red; 15 green, 1 blue, 9 red; 1 blue, 8 red, 12 green; 11 green, 1 blue, 1 red
-Game 80: 3 red, 3 blue, 1 green; 1 blue, 8 green; 10 green, 16 blue
-Game 81: 15 blue, 2 red; 1 red, 8 blue; 2 green, 7 red, 11 blue; 19 blue, 8 red, 2 green; 20 red, 19 blue
-Game 82: 3 red, 17 blue, 9 green; 10 red, 2 green, 17 blue; 13 red, 3 blue, 10 green; 11 red, 10 green, 18 blue; 1 green, 12 blue, 9 red; 3 red, 10 blue, 8 green
-Game 83: 4 green, 2 blue, 14 red; 7 red, 2 blue, 7 green; 16 red, 7 green; 16 red, 2 green; 3 blue, 4 green, 15 red; 6 red, 1 blue, 4 green
-Game 84: 4 blue, 1 green, 2 red; 7 blue, 6 red; 1 blue, 4 red, 3 green
-Game 85: 5 blue, 1 red, 4 green; 14 blue, 7 green; 9 blue, 1 red, 7 green; 15 blue, 9 green; 8 blue, 6 green, 1 red
-Game 86: 12 red, 12 blue, 7 green; 16 red, 11 green, 4 blue; 14 blue, 8 green, 8 red; 2 blue, 15 red, 6 green; 1 green, 6 red, 5 blue; 11 blue, 9 green
-Game 87: 4 blue, 2 green, 6 red; 8 red, 3 green, 5 blue; 10 red, 1 green; 1 green, 3 blue, 1 red
-Game 88: 2 green, 2 red, 4 blue; 4 blue, 4 green, 12 red; 2 green, 3 blue, 4 red; 2 green, 2 blue, 12 red; 4 blue, 8 red, 2 green
-Game 89: 13 blue, 1 red, 5 green; 8 green, 16 blue, 5 red; 12 green, 2 red, 18 blue
-Game 90: 7 red, 11 blue, 1 green; 8 green, 13 blue; 7 green, 16 blue; 5 green, 13 red, 11 blue; 5 blue, 10 green, 3 red
-Game 91: 1 blue; 1 blue, 3 green; 1 green, 2 red
-Game 92: 16 red, 4 blue, 14 green; 15 red, 7 blue, 13 green; 7 green, 13 red, 8 blue; 4 blue, 9 red, 5 green; 6 red, 7 blue, 8 green; 14 green, 7 red, 10 blue
-Game 93: 2 red, 6 blue, 7 green; 8 green, 3 red, 10 blue; 1 green, 4 red; 2 red, 2 green; 8 blue, 7 green
-Game 94: 2 green, 3 blue, 5 red; 10 blue; 1 green, 7 red; 3 blue, 1 green, 12 red
-Game 95: 13 blue, 5 red; 9 blue, 3 red, 7 green; 10 green, 4 red, 12 blue; 14 blue; 7 green, 2 blue, 1 red
-Game 96: 5 red, 2 blue; 4 red; 1 green, 2 blue
-Game 97: 9 red, 10 green, 3 blue; 2 green, 15 red, 1 blue; 2 blue, 16 green, 16 red; 8 green, 14 red; 16 red
-Game 98: 18 green, 16 red, 1 blue; 3 red, 2 blue, 20 green; 1 blue, 20 green, 14 red; 14 red, 2 green
-Game 99: 7 red, 9 green, 5 blue; 6 blue, 1 green; 4 green, 5 blue, 1 red; 8 green, 6 red, 7 blue; 1 blue, 2 red, 9 green
-Game 100: 10 blue, 2 red; 7 green, 20 blue, 9 red; 8 red, 6 green, 2 blue
+gear { row: 26, col: 96 } numbers [ 745, 87 ]
+gear { row: 26, col: 128 } numbers [ 701, 218 ]
+gear { row: 27, col: 4 } numbers [ 414, 241 ]
+gear { row: 27, col: 21 } numbers [ 493, 257 ]
+gear { row: 27, col: 27 } numbers [ 566, 312 ]
+gear { row: 29, col: 51 } numbers [ 792, 854 ]
+gear { row: 29, col: 74 } numbers [ 276 ]
+gear { row: 29, col: 136 } numbers [ 184, 571 ]
+gear { row: 30, col: 7 } numbers [ 136, 755 ]
+gear { row: 30, col: 97 } numbers [ 432, 668 ]
+gear { row: 30, col: 123 } numbers [ 918, 281 ]
+gear { row: 31, col: 16 } numbers [ 950, 6 ]
+gear { row: 31, col: 49 } numbers [ 496, 955 ]
+gear { row: 32, col: 21 } numbers [ 812, 506 ]
+gear { row: 32, col: 57 } numbers [ 712, 12 ]
+gear { row: 33, col: 82 } numbers [ 667, 391 ]
+gear { row: 34, col: 97 } numbers [ 565 ]
+gear { row: 34, col: 106 } numbers [ 544, 436 ]
+gear { row: 35, col: 8 } numbers [ 377, 406 ]
+gear { row: 35, col: 58 } numbers [ 229, 251 ]
+gear { row: 35, col: 114 } numbers [ 449, 905 ]
+gear { row: 35, col: 129 } numbers [ 665, 747 ]
+gear { row: 36, col: 93 } numbers [ 874, 399 ]
+gear { row: 36, col: 107 } numbers [ 9, 283 ]
+gear { row: 37, col: 4 } numbers [ 447 ]
+gear { row: 37, col: 121 } numbers [ 124, 102 ]
+gear { row: 38, col: 62 } numbers [ 390, 614 ]
+gear { row: 38, col: 73 } numbers [ 845, 237 ]
+gear { row: 38, col: 81 } numbers [ 12, 512 ]
+gear { row: 39, col: 44 } numbers [ 92, 885 ]
+gear { row: 40, col: 71 } numbers [ 948, 674 ]
+gear { row: 40, col: 90 } numbers [ 108, 58 ]
+gear { row: 40, col: 94 } numbers [ 162, 81 ]
+gear { row: 40, col: 115 } numbers [ 395, 922 ]
+gear { row: 41, col: 15 } numbers [ 10, 887 ]
+gear { row: 41, col: 33 } numbers [ 101 ]
+gear { row: 42, col: 61 } numbers [ 427, 933 ]
+gear { row: 42, col: 67 } numbers [ 210, 629 ]
+gear { row: 42, col: 84 } numbers [ 371, 903 ]
+gear { row: 42, col: 124 } numbers [ 231, 178 ]
+gear { row: 42, col: 130 } numbers [ 346, 749 ]
+gear { row: 43, col: 5 } numbers [ 525, 993 ]
+gear { row: 43, col: 74 } numbers [ 281, 477 ]
+gear { row: 43, col: 97 } numbers [ 251, 858 ]
+gear { row: 43, col: 110 } numbers [ 635, 499 ]
+gear { row: 43, col: 135 } numbers [ 828, 170 ]
+gear { row: 44, col: 86 } numbers [ 977, 749 ]
+gear { row: 45, col: 51 } numbers [ 394, 162 ]
+gear { row: 45, col: 58 } numbers [ 56, 332 ]
+gear { row: 45, col: 83 } numbers [ 545, 859 ]
+gear { row: 46, col: 26 } numbers [ 35, 393 ]
+gear { row: 47, col: 47 } numbers [ 642, 394 ]
+gear { row: 47, col: 130 } numbers [ 717, 302 ]
+gear { row: 48, col: 11 } numbers [ 32, 674 ]
+gear { row: 48, col: 59 } numbers [ 504 ]
+gear { row: 48, col: 78 } numbers [ 951, 803 ]
+gear { row: 48, col: 90 } numbers [ 823, 831 ]
+gear { row: 48, col: 115 } numbers [ 358 ]
+gear { row: 48, col: 122 } numbers [ 603, 476 ]
+gear { row: 48, col: 136 } numbers [ 515, 9 ]
+gear { row: 49, col: 6 } numbers [ 917, 738 ]
+gear { row: 49, col: 52 } numbers [ 195, 268 ]
+gear { row: 49, col: 94 } numbers [ 448, 523 ]
+gear { row: 49, col: 97 } numbers [ 519, 459 ]
+gear { row: 49, col: 133 } numbers [ 870, 887 ]
+gear { row: 51, col: 22 } numbers [ 77, 648 ]
+gear { row: 51, col: 45 } numbers [ 581, 555 ]
+gear { row: 51, col: 126 } numbers [ 88, 672 ]
+gear { row: 53, col: 37 } numbers [ 676, 530 ]
+gear { row: 53, col: 70 } numbers [ 26, 821 ]
+gear { row: 53, col: 108 } numbers [ 953, 614 ]
+gear { row: 54, col: 57 } numbers [ 756 ]
+gear { row: 54, col: 123 } numbers [ 433, 613 ]
+gear { row: 54, col: 132 } numbers [ 727, 961 ]
+gear { row: 55, col: 8 } numbers [ 339 ]
+gear { row: 55, col: 65 } numbers [ 259, 383 ]
+gear { row: 55, col: 99 } numbers [ 851, 124 ]
+gear { row: 56, col: 23 } numbers [ 215 ]
+gear { row: 56, col: 113 } numbers [ 149, 737 ]
+gear { row: 56, col: 135 } numbers [ 15, 445 ]
+gear { row: 57, col: 17 } numbers [ 595, 7 ]
+gear { row: 57, col: 45 } numbers [ 670, 890 ]
+gear { row: 57, col: 48 } numbers [ 105, 975 ]
+gear { row: 57, col: 81 } numbers [ 252, 576 ]
+gear { row: 57, col: 94 } numbers [ 447, 78 ]
+gear { row: 57, col: 129 } numbers [ 562, 695 ]
+gear { row: 58, col: 25 } numbers [ 839, 598 ]
+gear { row: 58, col: 32 } numbers [ 781, 152 ]
+gear { row: 60, col: 17 } numbers [ 475, 968 ]
+gear { row: 60, col: 51 } numbers [ 412, 101 ]
+gear { row: 61, col: 45 } numbers [ 320, 356 ]
+gear { row: 61, col: 106 } numbers [ 601, 240 ]
+gear { row: 62, col: 9 } numbers [ 738, 683 ]
+gear { row: 62, col: 15 } numbers [ 610, 326 ]
+gear { row: 62, col: 61 } numbers [ 476, 633 ]
+gear { row: 62, col: 113 } numbers [ 638, 94 ]
+gear { row: 63, col: 24 } numbers [ 601, 957 ]
+gear { row: 63, col: 94 } numbers [ 806, 96 ]
+gear { row: 65, col: 40 } numbers [ 376 ]
+gear { row: 65, col: 71 } numbers [ 194, 187 ]
+gear { row: 65, col: 86 } numbers [ 356, 441 ]
+gear { row: 65, col: 98 } numbers [ 368, 201 ]
+gear { row: 66, col: 75 } numbers [ 304, 696 ]
+gear { row: 67, col: 46 } numbers [ 947, 449 ]
+gear { row: 67, col: 67 } numbers [ 371 ]
+gear { row: 68, col: 3 } numbers [ 574, 322 ]
+gear { row: 68, col: 14 } numbers [ 75, 937 ]
+gear { row: 68, col: 51 } numbers [ 758, 40 ]
+gear { row: 68, col: 69 } numbers [ 400 ]
+gear { row: 68, col: 112 } numbers [ 49 ]
+gear { row: 68, col: 133 } numbers [ 670, 82 ]
+gear { row: 69, col: 25 } numbers [ 426, 842 ]
+gear { row: 69, col: 61 } numbers [ 314, 817 ]
+gear { row: 69, col: 128 } numbers [ 58, 559 ]
+gear { row: 70, col: 11 } numbers [ 622, 235 ]
+gear { row: 70, col: 95 } numbers [ 918, 455 ]
+gear { row: 70, col: 108 } numbers [ 195, 21 ]
+gear { row: 71, col: 20 } numbers [ 527, 869 ]
+gear { row: 71, col: 34 } numbers [ 922, 465 ]
+gear { row: 71, col: 53 } numbers [ 125, 610 ]
+gear { row: 71, col: 71 } numbers [ 459, 47 ]
+gear { row: 72, col: 119 } numbers [ 964, 499 ]
+gear { row: 73, col: 20 } numbers [ 732, 581 ]
+gear { row: 73, col: 129 } numbers [ 726, 78 ]
+gear { row: 74, col: 28 } numbers [ 51, 935 ]
+gear { row: 74, col: 49 } numbers [ 720, 263 ]
+gear { row: 74, col: 59 } numbers [ 853, 874 ]
+gear { row: 74, col: 78 } numbers [ 623, 891 ]
+gear { row: 74, col: 116 } numbers [ 572, 923 ]
+gear { row: 75, col: 37 } numbers [ 787, 444 ]
+gear { row: 75, col: 83 } numbers [ 515, 960 ]
+gear { row: 76, col: 33 } numbers [ 330 ]
+gear { row: 77, col: 74 } numbers [ 915, 349 ]
+gear { row: 77, col: 88 } numbers [ 395, 416 ]
+gear { row: 77, col: 98 } numbers [ 823, 542 ]
+gear { row: 77, col: 114 } numbers [ 341, 853 ]
+gear { row: 77, col: 133 } numbers [ 295, 132 ]
+gear { row: 79, col: 22 } numbers [ 791 ]
+gear { row: 79, col: 43 } numbers [ 399, 933 ]
+gear { row: 80, col: 46 } numbers [ 233, 438 ]
+gear { row: 80, col: 68 } numbers [ 884, 424 ]
+gear { row: 81, col: 8 } numbers [ 292 ]
+gear { row: 81, col: 124 } numbers [ 857, 192 ]
+gear { row: 82, col: 83 } numbers [ 416, 412 ]
+gear { row: 82, col: 96 } numbers [ 484, 859 ]
+gear { row: 83, col: 41 } numbers [ 549, 816 ]
+gear { row: 83, col: 46 } numbers [ 106, 391 ]
+gear { row: 83, col: 54 } numbers [ 24 ]
+gear { row: 83, col: 105 } numbers [ 767, 138 ]
+gear { row: 84, col: 90 } numbers [ 546, 856 ]
+gear { row: 84, col: 119 } numbers [ 66, 576 ]
+gear { row: 85, col: 74 } numbers [ 447, 373 ]
+gear { row: 85, col: 101 } numbers [ 627, 308 ]
+gear { row: 86, col: 46 } numbers [ 642, 202 ]
+gear { row: 86, col: 59 } numbers [ 673, 65 ]
+gear { row: 86, col: 107 } numbers [ 696, 504 ]
+gear { row: 86, col: 125 } numbers [ 658, 339 ]
+gear { row: 86, col: 46 } numbers [ 642, 202 ]
+gear { row: 87, col: 4 } numbers [ 489 ]
+gear { row: 87, col: 13 } numbers [ 174, 540 ]
+gear { row: 87, col: 29 } numbers [ 676, 822 ]
+gear { row: 87, col: 57 } numbers [ 332, 308 ]
+gear { row: 87, col: 77 } numbers [ 350, 942 ]
+gear { row: 87, col: 105 } numbers [ 166 ]
+gear { row: 88, col: 88 } numbers [ 358, 253 ]
+gear { row: 89, col: 72 } numbers [ 895, 865 ]
+gear { row: 89, col: 116 } numbers [ 550 ]
+gear { row: 90, col: 110 } numbers [ 897, 912 ]
+gear { row: 91, col: 4 } numbers [ 748, 605 ]
+gear { row: 91, col: 12 } numbers [ 249, 24 ]
+gear { row: 91, col: 43 } numbers [ 194, 573 ]
+gear { row: 92, col: 19 } numbers [ 658, 572 ]
+gear { row: 92, col: 99 } numbers [ 907 ]
+gear { row: 92, col: 129 } numbers [ 240, 929 ]
+gear { row: 93, col: 79 } numbers [ 646, 257 ]
+gear { row: 94, col: 55 } numbers [ 148, 677 ]
+gear { row: 94, col: 64 } numbers [ 182 ]
+gear { row: 94, col: 124 } numbers [ 602, 321 ]
+gear { row: 95, col: 46 } numbers [ 808, 987 ]
+gear { row: 95, col: 136 } numbers [ 2, 296 ]
+gear { row: 96, col: 16 } numbers [ 903, 669 ]
+gear { row: 96, col: 28 } numbers [ 588, 630 ]
+gear { row: 97, col: 33 } numbers [ 490, 557 ]
+gear { row: 97, col: 87 } numbers [ 493, 868 ]
+gear { row: 97, col: 97 } numbers [ 805, 690 ]
+gear { row: 97, col: 116 } numbers [ 89, 997 ]
+gear { row: 98, col: 9 } numbers [ 640, 34 ]
+gear { row: 98, col: 65 } numbers [ 582, 948 ]
+gear { row: 98, col: 90 } numbers [ 796, 67 ]
+gear { row: 99, col: 47 } numbers [ 265, 58 ]
+gear { row: 100, col: 13 } numbers [ 916, 853 ]
+gear { row: 101, col: 23 } numbers [ 849, 476 ]
+gear { row: 101, col: 38 } numbers [ 217, 435 ]
+gear { row: 102, col: 51 } numbers [ 355, 469 ]
+gear { row: 102, col: 81 } numbers [ 636, 522 ]
+gear { row: 102, col: 99 } numbers [ 131, 939 ]
+gear { row: 102, col: 111 } numbers [ 39 ]
+gear { row: 103, col: 58 } numbers [ 700, 864 ]
+gear { row: 104, col: 3 } numbers [ 16, 337 ]
+gear { row: 104, col: 13 } numbers [ 869, 983 ]
+gear { row: 105, col: 32 } numbers [ 413, 104 ]
+gear { row: 105, col: 43 } numbers [ 100, 741 ]
+gear { row: 105, col: 93 } numbers [ 42, 461 ]
+gear { row: 105, col: 98 } numbers [ 685, 381 ]
+gear { row: 105, col: 124 } numbers [ 806, 712 ]
+gear { row: 105, col: 128 } numbers [ 386, 374 ]
+gear { row: 106, col: 77 } numbers [ 276, 230 ]
+gear { row: 106, col: 105 } numbers [ 270, 740 ]
+gear { row: 107, col: 25 } numbers [ 207, 46 ]
+gear { row: 107, col: 71 } numbers [ 531 ]
+gear { row: 107, col: 113 } numbers [ 979, 755 ]
+gear { row: 108, col: 34 } numbers [ 485, 466 ]
+gear { row: 108, col: 92 } numbers [ 7, 791 ]
+gear { row: 110, col: 53 } numbers [ 339, 76 ]
+gear { row: 111, col: 44 } numbers [ 972, 749 ]
+gear { row: 112, col: 27 } numbers [ 48 ]
+gear { row: 112, col: 60 } numbers [ 243, 964 ]
+gear { row: 112, col: 86 } numbers [ 757, 413 ]
+gear { row: 112, col: 93 } numbers [ 364, 9 ]
+gear { row: 112, col: 97 } numbers [ 870, 791 ]
+gear { row: 113, col: 35 } numbers [ 571, 729 ]
+gear { row: 113, col: 128 } numbers [ 201, 65 ]
+gear { row: 114, col: 9 } numbers [ 752, 502 ]
+gear { row: 114, col: 14 } numbers [ 470, 307 ]
+gear { row: 114, col: 72 } numbers [ 452, 332 ]
+gear { row: 114, col: 111 } numbers [ 687, 472 ]
+gear { row: 115, col: 31 } numbers [ 573, 754 ]
+gear { row: 115, col: 50 } numbers [ 197, 713 ]
+gear { row: 115, col: 77 } numbers [ 798, 622 ]
+gear { row: 115, col: 88 } numbers [ 861, 399 ]
+gear { row: 115, col: 132 } numbers [ 200, 967 ]
+gear { row: 116, col: 56 } numbers [ 473, 260 ]
+gear { row: 117, col: 4 } numbers [ 820, 935 ]
+gear { row: 117, col: 25 } numbers [ 65, 815 ]
+gear { row: 117, col: 29 } numbers [ 58, 689 ]
+gear { row: 118, col: 40 } numbers [ 218, 284 ]
+gear { row: 118, col: 88 } numbers [ 933, 697 ]
+gear { row: 118, col: 99 } numbers [ 466, 239 ]
+gear { row: 118, col: 116 } numbers [ 132, 489 ]
+gear { row: 118, col: 130 } numbers [ 414, 164 ]
+gear { row: 119, col: 66 } numbers [ 159, 723 ]
+gear { row: 120, col: 10 } numbers [ 388 ]
+gear { row: 120, col: 59 } numbers [ 770, 132 ]
+gear { row: 120, col: 74 } numbers [ 509 ]
+gear { row: 120, col: 79 } numbers [ 705, 776 ]
+gear { row: 120, col: 112 } numbers [ 332, 758 ]
+gear { row: 121, col: 16 } numbers [ 979 ]
+gear { row: 121, col: 33 } numbers [ 288, 353 ]
+gear { row: 121, col: 44 } numbers [ 972, 329 ]
+gear { row: 121, col: 116 } numbers [ 115 ]
+gear { row: 122, col: 18 } numbers [ 267, 52 ]
+gear { row: 122, col: 39 } numbers [ 367, 459 ]
+gear { row: 122, col: 83 } numbers [ 790, 510 ]
+gear { row: 122, col: 93 } numbers [ 466, 207 ]
+gear { row: 123, col: 29 } numbers [ 8, 978 ]
+gear { row: 123, col: 135 } numbers [ 712, 725 ]
+gear { row: 124, col: 24 } numbers [ 170, 269 ]
+gear { row: 124, col: 46 } numbers [ 9, 815 ]
+gear { row: 124, col: 78 } numbers [ 813, 890 ]
+gear { row: 125, col: 68 } numbers [ 217, 216 ]
+gear { row: 126, col: 57 } numbers [ 195, 121 ]
+gear { row: 126, col: 104 } numbers [ 534, 460 ]
+gear { row: 127, col: 6 } numbers [ 339, 503 ]
+gear { row: 128, col: 64 } numbers [ 134, 103 ]
+gear { row: 128, col: 79 } numbers [ 276, 190 ]
+gear { row: 128, col: 99 } numbers [ 853, 982 ]
+gear { row: 128, col: 121 } numbers [ 79, 209 ]
+gear { row: 129, col: 10 } numbers [ 22, 350 ]
+gear { row: 129, col: 46 } numbers [ 38, 3 ]
+gear { row: 129, col: 107 } numbers [ 25, 846 ]
+gear { row: 130, col: 36 } numbers [ 619, 729 ]
+gear { row: 130, col: 118 } numbers [ 465, 769 ]
+gear { row: 131, col: 20 } numbers [ 949, 788 ]
+gear { row: 131, col: 30 } numbers [ 121, 488 ]
+gear { row: 131, col: 69 } numbers [ 713, 851 ]
+gear { row: 131, col: 77 } numbers [ 734 ]
+gear { row: 131, col: 88 } numbers [ 262, 487 ]
+gear { row: 132, col: 82 } numbers [ 317 ]
+gear { row: 132, col: 125 } numbers [ 811, 206 ]
+gear { row: 132, col: 125 } numbers [ 811, 206 ]
+gear { row: 134, col: 10 } numbers [ 528, 823 ]
+gear { row: 134, col: 31 } numbers [ 475, 716 ]
+gear { row: 134, col: 60 } numbers [ 130, 247 ]
+gear { row: 134, col: 86 } numbers [ 251, 697 ]
+gear { row: 135, col: 41 } numbers [ 391, 277 ]
+gear { row: 135, col: 50 } numbers [ 347, 353 ]
+gear { row: 135, col: 55 } numbers [ 795, 719 ]
+gear { row: 135, col: 93 } numbers [ 722, 846 ]
+gear { row: 135, col: 99 } numbers [ 666, 37 ]
+gear { row: 136, col: 5 } numbers [ 98, 91 ]
