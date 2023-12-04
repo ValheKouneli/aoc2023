@@ -62,9 +62,14 @@ function collectInstancesForCard(
   card: Card,
   index: number,
   allCards: Card[],
-  instances: number[]
+  instances: number[],
+  howManyMatchingMemo: number[]
 ) {
-  const points = howManyMatching(card);
+  let points = howManyMatchingMemo[index];
+  if (points == -1) {
+    points = howManyMatching(card);
+    howManyMatchingMemo[index] = points;
+  }
 
   const instancesWon: number[] = [];
   for (
@@ -76,7 +81,13 @@ function collectInstancesForCard(
   }
   instancesWon.forEach((index: number) => {
     instances[index] = instances[index] + 1;
-    collectInstancesForCard(allCards[index], index, allCards, instances);
+    collectInstancesForCard(
+      allCards[index],
+      index,
+      allCards,
+      instances,
+      howManyMatchingMemo
+    );
   });
 }
 
@@ -86,8 +97,9 @@ const part1 = cards.reduce((sum, card) => {
 }, 0);
 
 const instances = new Array(cards.length).fill(1);
+const howManyMatchingMemo = new Array(cards.length).fill(-1);
 cards.forEach((card, index) => {
-  collectInstancesForCard(card, index, cards, instances);
+  collectInstancesForCard(card, index, cards, instances, howManyMatchingMemo);
 });
 
 console.log("part1", part1);
