@@ -71,7 +71,7 @@ console.log("part2", part2);
 function fromRangeGetRanges(range: Range, filter: Filter[]): Range[] {
   const ranges: Range[] = [];
   const leftOfRange = filter.reduce((leftOfRange, currentFilter) => {
-    if (leftOfRange.beg < leftOfRange.end) {
+    if (leftOfRange.beg <= leftOfRange.end) {
       const currentFilterLast =
         currentFilter.sourcebeg + currentFilter.length - 1;
       if (currentFilterLast >= range.beg) {
@@ -99,7 +99,7 @@ function fromRangeGetRanges(range: Range, filter: Filter[]): Range[] {
     }
     return leftOfRange;
   }, range);
-  if (leftOfRange.beg < leftOfRange.end) {
+  if (leftOfRange.beg <= leftOfRange.end) {
     ranges.push(leftOfRange);
   }
   return ranges;
