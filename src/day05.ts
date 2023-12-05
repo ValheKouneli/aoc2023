@@ -12,49 +12,86 @@ const groups = input.reduce(
   },
   [[]] as string[][]
 );
-console.log("groups", groups);
+//console.log("groups", groups);
 
 const seeds = groups[0][0]
   .split(": ")[1]
   .split(" ")
   .map((a) => parseInt(a));
 console.log("seeds", seeds);
-const filters = groups.slice(1, groups.length).map((a) => a.slice(1, a.length));
-console.log("filters", filters);
-const finalSet = filters.reduce(
-  (currentNumbers: number[], nextInfo: string[]) => {
-    const mapped = currentNumbers.map(createMap(nextInfo));
-    console.log("FILTER");
-    console.log("currentNumbers", currentNumbers);
-    console.log("mapped", mapped);
-    return mapped;
-  },
-  seeds
-);
-const part1 = Math.min(...finalSet);
-console.log("seeds", seeds);
-console.log("part1", part1);
+const filterName = groups.slice(1, groups.length).map((a) => a[0]);
+const filters = groups
+  .slice(1, groups.length)
+  .map((a) => a.slice(1, a.length))
+  .map((a) => {
+    return a.map((a) => {
+      return a.split(" ").map((a) => parseInt(a));
+    });
+  });
 
-function createMap(info: string[]): (a: number) => number {
-  return (a: number) => {
-    //console.log("a", a);
-    let mappedTo = a;
-    info.some((row: string) => {
-      const [destStartString, sourceStartString, lengthString] = row.split(" ");
-      const destStart = parseInt(destStartString);
-      const sourceStart = parseInt(sourceStartString);
-      const length = parseInt(lengthString);
-      // console.log("a=" + a, "should be greater or equal than", sourceStart);
-      // console.log("and a should be smaller than", sourceStart + length);
-      if (a >= sourceStart && a < sourceStart + length) {
-        mappedTo = destStart + (a - sourceStart);
-        //console.log("And it is, so it is mapped to", mappedTo);
+const seedsActual = seeds.filter((seed, index) => index % 2 == 0);
+const seedsRange = seeds.filter((seed, index) => index % 2 == 1);
+const memoizedFilters = new Map<number, Map<number, number>>();
+const part2 = seedsActual.reduce((minValue, number, index) => {
+  // console.log("number", number);
+  // console.log("plop", seedsRange[index]);
+  for (let i = 0; i < seedsRange[index]; i++) {
+    const seedNumber = number + i;
+    console.log("seedNumber", seedNumber);
+
+    const filtered = filterNumber(seedNumber, memoizedFilters);
+    if (filtered < minValue) {
+      minValue = filtered;
+    }
+  }
+  return minValue;
+}, Number.POSITIVE_INFINITY);
+
+// const finalSet2 = filters.reduce(
+//   (currentNumbers: number[], nextInfo: string[]) => {
+//     const mapped = currentNumbers.map(createMap(nextInfo));
+//     console.log("FILTER");
+//     console.log("currentNumbers", currentNumbers);
+//     console.log("mapped", mapped);
+//     return mapped;
+//   },
+//   seeds2
+// );
+//console.log("part1", part1);
+console.log("part2", part2);
+//const part2 = Math.min(...finalSet2);
+//console.log("part2", part2);
+
+function filterNumber(
+  a: number,
+  memoizedFilters: Map<number, Map<number, number>>
+) {
+  let print = false;
+  if (a == 82) {
+    print = true;
+  }
+  return filters.reduce((aCurrentValue, filterSet, index) => {
+    let memoizedFilter = memoizedFilters.get(index);
+    if (!memoizedFilter) {
+      memoizedFilter = new Map<number, number>();
+    }
+    const memoizedValue = memoizedFilter.get(aCurrentValue);
+    if (memoizedValue) {
+      return memoizedValue;
+    }
+    let mappedTo = aCurrentValue;
+    filterSet.some((row: number[]) => {
+      const [destStart, sourceStart, length] = row;
+      if (
+        aCurrentValue >= sourceStart &&
+        aCurrentValue < sourceStart + length
+      ) {
+        mappedTo = destStart + (aCurrentValue - sourceStart);
         return true;
-      } else {
-        //console.log("But it i not");
       }
     });
-    //console.log("mappedTo", mappedTo);
+    memoizedFilter.set(aCurrentValue, mappedTo);
+    memoizedFilters.set(index, memoizedFilter);
     return mappedTo;
-  };
+  }, a);
 }
