@@ -51,14 +51,12 @@ type Range = {
   end: number;
 };
 
-const finalSet = filters.reduce(
-  (currentNumbers: number[], nextFilter: Filter[]) => {
+const part1 = Math.min(
+  ...filters.reduce((currentNumbers: number[], nextFilter: Filter[]) => {
     const mapped = currentNumbers.map(createMap(nextFilter));
     return mapped;
-  },
-  seeds
+  }, seeds)
 );
-const part1 = Math.min(...finalSet);
 
 console.log("part1", part1);
 
