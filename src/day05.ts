@@ -12,14 +12,11 @@ const groups = input.reduce(
   },
   [[]] as string[][]
 );
-//console.log("groups", groups);
 
 const seeds = groups[0][0]
   .split(": ")[1]
   .split(" ")
   .map((a) => parseInt(a));
-console.log("seeds", seeds);
-const filterName = groups.slice(1, groups.length).map((a) => a[0]);
 const filters = groups
   .slice(1, groups.length)
   .map((a) => a.slice(1, a.length))
@@ -31,67 +28,75 @@ const filters = groups
 
 const seedsActual = seeds.filter((seed, index) => index % 2 == 0);
 const seedsRange = seeds.filter((seed, index) => index % 2 == 1);
-const memoizedFilters = new Map<number, Map<number, number>>();
-const part2 = seedsActual.reduce((minValue, number, index) => {
-  // console.log("number", number);
-  // console.log("plop", seedsRange[index]);
-  for (let i = 0; i < seedsRange[index]; i++) {
-    const seedNumber = number + i;
-    console.log("seedNumber", seedNumber);
 
-    const filtered = filterNumber(seedNumber, memoizedFilters);
-    if (filtered < minValue) {
-      minValue = filtered;
+const filtersReversed = [...filters].reverse();
+const filtersReveredAllButLast = filtersReversed.slice(
+  1,
+  filtersReversed.length
+);
+
+function getSourceNumber(i: number, print?: boolean) {
+  return filtersReveredAllButLast.reduce(
+    (curNumber: number, curFilter: number[][]) => {
+      const previous = findNumberSource(curNumber, curFilter, print);
+      return previous;
+    },
+    i
+  );
+}
+
+function sourceNumberIsInSource(i: number) {
+  const found = seedsActual.some(
+    (startPos, index) => i >= startPos && i < startPos + seedsRange[index]
+  );
+  return found;
+}
+
+function findNumberSource(i: number, filter: number[][], print?: boolean) {
+  let numberSource = i;
+  filter.some((row: number[]) => {
+    if (i >= row[0] && i < row[0] + row[2]) {
+      numberSource = row[1] + (i - row[0]);
+      return true;
+    }
+  });
+  if (print) {
+    console.log("  findNumberSource");
+    console.log("  i", i);
+    console.log("  filter", filter);
+    console.log("  numberSource", numberSource);
+  }
+  return numberSource;
+}
+
+let smallestIndex = -1;
+
+const sortedLast = [...filtersReversed[0]].sort((a, b) => a[0] - b[0]);
+console.log("sortedLast", sortedLast);
+
+const lowestPossibleInTargets = sortedLast[0][0];
+if (lowestPossibleInTargets) {
+  for (let i = 0; i < lowestPossibleInTargets; i++) {
+    console.log("\nMOIKKELIS", i);
+    const found = sourceNumberIsInSource(getSourceNumber(i));
+    if (found) {
+      smallestIndex = i;
+      break;
     }
   }
-  return minValue;
-}, Number.POSITIVE_INFINITY);
-
-// const finalSet2 = filters.reduce(
-//   (currentNumbers: number[], nextInfo: string[]) => {
-//     const mapped = currentNumbers.map(createMap(nextInfo));
-//     console.log("FILTER");
-//     console.log("currentNumbers", currentNumbers);
-//     console.log("mapped", mapped);
-//     return mapped;
-//   },
-//   seeds2
-// );
-//console.log("part1", part1);
-console.log("part2", part2);
-//const part2 = Math.min(...finalSet2);
-//console.log("part2", part2);
-
-function filterNumber(
-  a: number,
-  memoizedFilters: Map<number, Map<number, number>>
-) {
-  let print = false;
-  if (a == 82) {
-    print = true;
-  }
-  return filters.reduce((aCurrentValue, filterSet, index) => {
-    let memoizedFilter = memoizedFilters.get(index);
-    if (!memoizedFilter) {
-      memoizedFilter = new Map<number, number>();
-    }
-    const memoizedValue = memoizedFilter.get(aCurrentValue);
-    if (memoizedValue) {
-      return memoizedValue;
-    }
-    let mappedTo = aCurrentValue;
-    filterSet.some((row: number[]) => {
-      const [destStart, sourceStart, length] = row;
-      if (
-        aCurrentValue >= sourceStart &&
-        aCurrentValue < sourceStart + length
-      ) {
-        mappedTo = destStart + (aCurrentValue - sourceStart);
+}
+if (smallestIndex == -1) {
+  sortedLast.some((range) => {
+    for (let i = range[0]; i < range[0] + range[2]; i++) {
+      console.log("\nMOIKKELIS", i);
+      const sourceNumber = getSourceNumber(i);
+      const found = sourceNumberIsInSource(sourceNumber);
+      if (found) {
+        smallestIndex = i;
         return true;
       }
-    });
-    memoizedFilter.set(aCurrentValue, mappedTo);
-    memoizedFilters.set(index, memoizedFilter);
-    return mappedTo;
-  }, a);
+    }
+  });
 }
+
+console.log("smallestIndex", smallestIndex);
