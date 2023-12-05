@@ -50,6 +50,33 @@ type Range = {
   beg: number;
   end: number;
 };
+
+const finalSet = filters.reduce(
+  (currentNumbers: number[], nextFilter: Filter[]) => {
+    const mapped = currentNumbers.map(createMap(nextFilter));
+    return mapped;
+  },
+  seeds
+);
+const part1 = Math.min(...finalSet);
+
+console.log("part1", part1);
+
+function createMap(filters: Filter[]): (a: number) => number {
+  return (a: number) => {
+    let mappedTo = a;
+    filters.some((filter: Filter) => {
+      if (a >= filter.sourcebeg && a < filter.sourcebeg + filter.length) {
+        mappedTo = filter.targetbeg + (a - filter.sourcebeg);
+        return true;
+      }
+    });
+    return mappedTo;
+  };
+}
+
+//
+
 function getFinalRanges(startingRanges: Range[]) {
   return filters.reduce((ranges: Range[], filter: Filter[], index: number) => {
     const rangesAfterFilter = ranges.reduce(
