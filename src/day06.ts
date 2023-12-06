@@ -41,12 +41,13 @@ function howManyWaysToWin(time: number, winningDistance: number) {
   if (insideSquareRoot < 0) {
     throw new Error("ZERO");
   }
-  const lowerBoundToWin = (time - Math.sqrt(insideSquareRoot)) / 2;
-  const upperBoundToWin = (time + Math.sqrt(insideSquareRoot)) / 2;
-  const boundsToWin = [
-    Math.floor(lowerBoundToWin + 1),
-    Math.ceil(upperBoundToWin - 1),
-  ];
-  const waysToWin = boundsToWin[1] - boundsToWin[0] + 1;
+  const lowerBoundToWin = Math.floor(
+    (time - Math.sqrt(insideSquareRoot)) / 2 + 1
+  );
+  const upperBoundToWin = Math.ceil(
+    (time + Math.sqrt(insideSquareRoot)) / 2 - 1
+  );
+
+  const waysToWin = upperBoundToWin - lowerBoundToWin + 1;
   return waysToWin;
 }
