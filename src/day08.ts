@@ -18,15 +18,40 @@ function getNextNode(currentNode: string, instruction: number): string {
   }
   return mappedTo[instruction];
 }
-let pointer = 0;
-let stepsTaken = 0;
-let coordinateNow: string = "AAA";
-while (coordinateNow !== "ZZZ") {
-  const instruction = instructions[pointer];
-  coordinateNow = getNextNode(coordinateNow, instruction);
+function getPart1(startingCoordinate: string) {
+  let pointer = 0;
+  let stepsTaken = 0;
+  let coordinateNow: string = startingCoordinate;
+  while (coordinateNow !== "ZZZ") {
+    const instruction = instructions[pointer];
+    coordinateNow = getNextNode(coordinateNow, instruction);
 
-  pointer = pointer + 1 < instructions.length ? pointer + 1 : 0;
-  stepsTaken += 1;
-  console.log("cordinateNow", coordinateNow);
+    pointer = pointer + 1 < instructions.length ? pointer + 1 : 0;
+    stepsTaken += 1;
+    //console.log("cordinateNow", coordinateNow);
+  }
+  return stepsTaken;
 }
-console.log("part1", stepsTaken);
+
+console.log("part1", getPart1("AAA"));
+
+const startingCoordinates = [...mappings.keys()].filter(
+  (a: string) => a[2] == "A"
+);
+
+function getPart2() {
+  let pointer = 0;
+  let stepsTaken = 0;
+  let coordinatesNow: string[] = startingCoordinates;
+  while (!coordinatesNow.every((a) => a[2] == "Z")) {
+    const instruction = instructions[pointer];
+    coordinatesNow = coordinatesNow.map((coordinate) =>
+      getNextNode(coordinate, instruction)
+    );
+    pointer = pointer + 1 < instructions.length ? pointer + 1 : 0;
+    stepsTaken += 1;
+    console.log("coordinatesNow", coordinatesNow);
+  }
+  return stepsTaken;
+}
+console.log("part2", getPart2());
