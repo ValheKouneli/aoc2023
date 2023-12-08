@@ -39,19 +39,141 @@ const startingCoordinates = [...mappings.keys()].filter(
   (a: string) => a[2] == "A"
 );
 
-function getPart2() {
+type PersonalMap = Map<string, [string, number]>;
+
+function getPersonalMap(startingCoordinate: string): PersonalMap {
+  const personalMap = new Map<string, [string, number]>();
+  let startPoint = startingCoordinate;
   let pointer = 0;
   let stepsTaken = 0;
-  let coordinatesNow: string[] = startingCoordinates;
-  while (!coordinatesNow.every((a) => a[2] == "Z")) {
+  let coordinateNow: string = startingCoordinate;
+  while (!personalMap.get(coordinateNow)) {
+    // loop has been found
     const instruction = instructions[pointer];
-    coordinatesNow = coordinatesNow.map((coordinate) =>
-      getNextNode(coordinate, instruction)
-    );
+    coordinateNow = getNextNode(coordinateNow, instruction);
     pointer = pointer + 1 < instructions.length ? pointer + 1 : 0;
     stepsTaken += 1;
-    console.log("coordinatesNow", coordinatesNow);
+    if (coordinateNow[2] == "Z") {
+      personalMap.set(startPoint, [coordinateNow, stepsTaken]);
+      stepsTaken = 0;
+      startPoint = coordinateNow;
+    }
   }
-  return stepsTaken;
+  return personalMap;
 }
-console.log("part2", getPart2());
+
+type CurrentPositionInPersonalMap = {
+  lastZ: string;
+  stepsAfterLastZ: number;
+};
+
+function applySteps(
+  steps: number,
+  currentPos: CurrentPositionInPersonalMap,
+  personalMap: PersonalMap
+): CurrentPositionInPersonalMap {
+  //console.log("apply", steps, "to", currentPos);
+  const value = personalMap.get(currentPos.lastZ);
+  //console.log("value", value);
+  const stepsToNext = value![1] - currentPos.stepsAfterLastZ;
+  //console.log("stepsToNext", stepsToNext);
+  if (stepsToNext <= 0) {
+    throw new Error("APUA");
+  }
+  let ret;
+  if (stepsToNext > steps) {
+    ret = {
+      lastZ: currentPos.lastZ,
+      stepsAfterLastZ: currentPos.stepsAfterLastZ + steps,
+    };
+  } else {
+    ret = {
+      lastZ: value![0],
+      stepsAfterLastZ: (steps - stepsToNext) % value![1],
+    };
+  }
+  //console.log("ret", ret);
+  return ret;
+}
+
+function howManyStepsToNextZ(
+  currentPos: CurrentPositionInPersonalMap,
+  personalMap: PersonalMap
+): number {
+  const value = personalMap.get(currentPos.lastZ);
+  const left = value![1] - currentPos.stepsAfterLastZ;
+  return left;
+}
+
+type Place = {
+  personalMap: PersonalMap;
+  currentPos: CurrentPositionInPersonalMap;
+};
+
+const places: Place[] = startingCoordinates.map((start) => ({
+  personalMap: getPersonalMap(start),
+  currentPos: {
+    lastZ: start,
+    stepsAfterLastZ: 0,
+  },
+}));
+console.log(
+  "personalMaps",
+  places.map((p) => p.personalMap)
+);
+
+function getBiggestAmountsOfStepsToNextZ(places: Place[]) {
+  const biggest = places
+    .map((place) => howManyStepsToNextZ(place.currentPos, place.personalMap))
+    .sort((a, b) => a - b)
+    .pop() as number;
+  //console.log("getBiggestAmountOfSteps", biggest);
+
+  return biggest;
+}
+
+function getSmallestAmountsOfStepsToNextZ(places: Place[]) {
+  const smallest = places
+    .map((place) => howManyStepsToNextZ(place.currentPos, place.personalMap))
+    .sort((a, b) => b - a)
+    .pop() as number;
+
+  return smallest;
+}
+
+function getPart2(places: Place[]) {
+  const biggestNumberOfStepsToFirstZ = getBiggestAmountsOfStepsToNextZ(places);
+  const initialPositions = places.map((place) => ({
+    personalMap: place.personalMap,
+    currentPos: applySteps(
+      biggestNumberOfStepsToFirstZ,
+      place.currentPos,
+      place.personalMap
+    ),
+  }));
+  console.log(
+    "initial position",
+    initialPositions.map((i) => i.currentPos)
+  );
+  let steps = biggestNumberOfStepsToFirstZ;
+  let positions = initialPositions;
+  while (
+    positions.filter((pos) => pos.currentPos.stepsAfterLastZ == 0).length <= 1
+  ) {
+    console.log(positions.map((i) => i.currentPos));
+    const howManyStepsToTake = getSmallestAmountsOfStepsToNextZ(positions);
+    console.log("howManyStepsToTake", howManyStepsToTake);
+    positions = positions.map((place) => ({
+      personalMap: place.personalMap,
+      currentPos: applySteps(
+        howManyStepsToTake,
+        place.currentPos,
+        place.personalMap
+      ),
+    }));
+    steps += howManyStepsToTake;
+  }
+  console.log(positions.map((i) => i.currentPos));
+  return steps;
+}
+console.log("part2", getPart2(places));
