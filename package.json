@@ -13,7 +13,8 @@
     "day05": "ts-node src/day05.ts",
     "day06": "ts-node src/day06.ts",
     "day07": "ts-node src/day07.ts",
-    "day08": "ts-node src/day08.ts"
+    "day08": "ts-node src/day08.ts",
+    "day09": "ts-node src/day09.ts"
   },
   "keywords": [],
   "author": "",
