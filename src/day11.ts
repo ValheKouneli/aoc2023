@@ -1,25 +1,27 @@
 import { readFromFile } from "./util";
-const input: string[] = readFromFile("inputs/test.txt");
+const input: string[] = readFromFile("inputs/input11.txt");
 
 console.log("original");
 printUniverse(input);
 function expandUniverseHorizontally(universe: string[]) {
   const expandedGalaxy: string[] = new Array(universe.length).fill("");
-  for (let i = 0; i < universe[0].length; i++) {
-    if (universe.every((row) => row[i] == ".")) {
-      for (let j = 0; j < universe.length; j++) {
-        expandedGalaxy[j] += ".";
+  for (let col = 0; col < universe[0].length; col++) {
+    if (universe.every((row) => row[col] == ".")) {
+      console.log("Column", col, "of input has no #");
+      for (let row = 0; row < universe.length; row++) {
+        expandedGalaxy[row] += ".";
       }
     }
-    for (let j = 0; j < universe.length; j++) {
-      expandedGalaxy[j] += universe[j][i];
+    for (let row = 0; row < universe.length; row++) {
+      expandedGalaxy[row] += universe[row][col];
     }
   }
   return expandedGalaxy;
 }
 function expandUniverseVertically(universe: string[]) {
-  return universe.reduce((acc, row) => {
+  return universe.reduce((acc, row, index) => {
     if (!row.match(/#/)) {
+      console.log("Row", index, "of input has no #");
       acc.push(row);
     }
     acc.push(row);
@@ -42,7 +44,7 @@ function printUniverse(universe: string[]) {
 
 function findGalaxies(universe: string[]) {
   return universe.reduce(
-    (acc, cur, index) => acc.concat(findGalaxiesOfRow(cur, index)),
+    (acc, cur, index) => acc.concat(findGalaxiesOfRow2(cur, index)),
     [] as number[][]
   );
 }
@@ -60,8 +62,21 @@ function findGalaxiesOfRow(row: string, rowIndex: number) {
   return galaxies;
 }
 
+function findGalaxiesOfRow2(row: string, rowIndex: number) {
+  let spreadRow = [...row];
+  const galaxies: number[][] = [];
+  for (let i = 0; i < spreadRow.length; i++) {
+    const char = spreadRow[i];
+    if (char == "#") {
+      galaxies.push([rowIndex, i]);
+    }
+  }
+  return galaxies;
+}
+
 const galaxies = findGalaxies(universeExpandedBothWays);
-console.log("galaxies", galaxies);
+// console.log("galaxies");
+//galaxies.forEach((galaxy) => console.log(galaxy));
 
 function sumOfShortestDistances(galaxies: number[][]) {
   let sum = 0;
@@ -73,6 +88,7 @@ function sumOfShortestDistances(galaxies: number[][]) {
         Math.abs(galaxyA[0] - galaxyB[0]) + Math.abs(galaxyA[1] - galaxyB[1]);
       //console.log("distance between", galaxyA, galaxyB, "is", distance);
       sum += distance;
+      //console.log("sum", sum);
     }
   }
   return sum;
@@ -82,3 +98,4 @@ const part1 = sumOfShortestDistances(galaxies);
 console.log("part1", part1);
 
 // 10043590 too low
+// 10043591 too low
