@@ -21,6 +21,5 @@ const numberOfCellsInsideLoop = input.reduce(
 );
 
 console.log("part2", numberOfCellsInsideLoop);
-
 // 470 too low
 // 803 too high

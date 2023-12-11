@@ -11,7 +11,7 @@ export function printLoopWithColors(input: string[], loopMap: LoopMap) {
         .map((char, col) => {
           const nodeInLoop = getFromLoopMap({ row, col }, loopMap);
           if (!nodeInLoop) {
-            return " ";
+            return ".";
           } else {
             const upOrDownDir = getUpOrDownFromDirections(nodeInLoop);
             if (firstDirection == null) {
@@ -21,10 +21,19 @@ export function printLoopWithColors(input: string[], loopMap: LoopMap) {
               upOrDownDir == firstDirection
                 ? "\x1b[36m%s\x1b[0m"
                 : "\x1b[33m%s\x1b[0m";
-            return color.replace("%s", char);
+            return color.replace("%s", charMap[char] || char);
           }
         })
         .reduce((acc, cur) => acc + cur, "");
     })
     .forEach((row) => console.log(row));
 }
+
+const charMap: Record<string, string> = {
+  L: "└",
+  "7": "┐",
+  F: "┌",
+  J: "┘",
+  "-": "─",
+  "|": "│",
+};
