@@ -2,23 +2,23 @@ import { readFromFile } from "./util";
 const input: string[] = readFromFile("inputs/test.txt");
 
 console.log("original");
-printGalaxy(input);
-function expandGalaxyHorizontally(galaxy: string[]) {
-  const expandedGalaxy: string[] = new Array(galaxy.length).fill("");
-  for (let i = 0; i < galaxy[0].length; i++) {
-    if (galaxy.every((row) => row[i] == ".")) {
-      for (let j = 0; j < galaxy.length; j++) {
+printUniverse(input);
+function expandUniverseHorizontally(universe: string[]) {
+  const expandedGalaxy: string[] = new Array(universe.length).fill("");
+  for (let i = 0; i < universe[0].length; i++) {
+    if (universe.every((row) => row[i] == ".")) {
+      for (let j = 0; j < universe.length; j++) {
         expandedGalaxy[j] += ".";
       }
     }
-    for (let j = 0; j < galaxy.length; j++) {
-      expandedGalaxy[j] += galaxy[j][i];
+    for (let j = 0; j < universe.length; j++) {
+      expandedGalaxy[j] += universe[j][i];
     }
   }
   return expandedGalaxy;
 }
-function expandGalaxyVertically(galaxy: string[]) {
-  return galaxy.reduce((acc, row) => {
+function expandUniverseVertically(universe: string[]) {
+  return universe.reduce((acc, row) => {
     if (!row.match(/#/)) {
       acc.push(row);
     }
@@ -26,16 +26,16 @@ function expandGalaxyVertically(galaxy: string[]) {
     return acc;
   }, [] as string[]);
 }
-const galaxyExpandedHorizontally = expandGalaxyHorizontally(input);
-console.log("galaxyExpandedHorizontally");
-printGalaxy(galaxyExpandedHorizontally);
+const universeExpandedHorizontally = expandUniverseHorizontally(input);
+console.log("universeExpandedHorizontally");
+printUniverse(universeExpandedHorizontally);
 
-const galaxyExpandedBothWays = expandGalaxyVertically(
-  galaxyExpandedHorizontally
+const universeExpandedBothWays = expandUniverseVertically(
+  universeExpandedHorizontally
 );
-console.log("galaxyExpandedBothWays");
-printGalaxy(galaxyExpandedBothWays);
+console.log("universeExpandedBothWays");
+printUniverse(universeExpandedBothWays);
 
-function printGalaxy(galaxy: string[]) {
-  galaxy.forEach((row) => console.log(row));
+function printUniverse(universe: string[]) {
+  universe.forEach((row) => console.log(row));
 }
