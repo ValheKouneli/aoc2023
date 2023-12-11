@@ -18,6 +18,27 @@ function expandUniverseHorizontally(universe: string[]) {
   }
   return expandedGalaxy;
 }
+
+function getExpandedCols(universe: string[]) {
+  const expandedCols: number[] = [];
+  for (let col = 0; col < universe[0].length; col++) {
+    if (universe.every((row) => row[col] == ".")) {
+      expandedCols.push(col);
+    }
+  }
+  return expandedCols;
+}
+
+function getExpandedRows(universe: string[]) {
+  const expandedRows: number[] = [];
+  universe.forEach((row, index) => {
+    if (!row.match(/#/)) {
+      expandedRows.push(index);
+    }
+  });
+  return expandedRows;
+}
+
 function expandUniverseVertically(universe: string[]) {
   return universe.reduce((acc, row, index) => {
     if (!row.match(/#/)) {
@@ -78,14 +99,16 @@ const galaxies = findGalaxies(universeExpandedBothWays);
 // console.log("galaxies");
 //galaxies.forEach((galaxy) => console.log(galaxy));
 
-function sumOfShortestDistances(galaxies: number[][]) {
+function sumOfShortestDistances(
+  galaxies: number[][],
+  calcDistance: (a: number[], b: number[]) => number
+) {
   let sum = 0;
   for (let i = 0; i < galaxies.length - 1; i++) {
     for (let j = i + 1; j < galaxies.length; j++) {
       const galaxyA = galaxies[i];
       const galaxyB = galaxies[j];
-      const distance =
-        Math.abs(galaxyA[0] - galaxyB[0]) + Math.abs(galaxyA[1] - galaxyB[1]);
+      const distance = calcDistance(galaxyA, galaxyB);
       //console.log("distance between", galaxyA, galaxyB, "is", distance);
       sum += distance;
       //console.log("sum", sum);
@@ -94,8 +117,43 @@ function sumOfShortestDistances(galaxies: number[][]) {
   return sum;
 }
 
-const part1 = sumOfShortestDistances(galaxies);
-console.log("part1", part1);
+function part1Distance(a: number[], b: number[]) {
+  return Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]);
+}
 
-// 10043590 too low
-// 10043591 too low
+function getDistance(
+  galaxyA: number[],
+  galaxyB: number[],
+  expandedRows: number[],
+  expandedCols: number[]
+) {
+  const maxRow = Math.max(galaxyA[0], galaxyB[0]);
+  const minRow = Math.min(galaxyA[0], galaxyB[0]);
+  const maxCol = Math.max(galaxyA[1], galaxyB[1]);
+  const minCol = Math.min(galaxyA[1], galaxyB[1]);
+  const rowsBetweenGalaxies = expandedCols.filter(
+    (col) => col > minCol && col < maxCol
+  ).length;
+  const colsBetweenGalaxies = expandedRows.filter(
+    (row) => row > minRow && row < maxRow
+  ).length;
+  return (
+    maxRow -
+    minRow +
+    maxCol -
+    minCol +
+    999999 * rowsBetweenGalaxies +
+    999999 * colsBetweenGalaxies
+  );
+}
+
+const part1 = sumOfShortestDistances(galaxies, part1Distance);
+console.log("part1", part1);
+const galaxiesPart2 = findGalaxies(input);
+
+const part2 = sumOfShortestDistances(
+  galaxiesPart2,
+  (a: number[], b: number[]) =>
+    getDistance(a, b, getExpandedRows(input), getExpandedCols(input))
+);
+console.log("part2", part2);
