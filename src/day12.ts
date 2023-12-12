@@ -47,10 +47,6 @@ type RowWithErrorInfo = {
   errorInfo: number[];
 };
 
-type RowWithErrorInfoAndPossibilites = RowWithErrorInfo & {
-  possibilities: string[][];
-};
-
 const rowsWithErrorInfo = input
   .map((row) => row.split(" "))
   .map((pair) => ({
@@ -61,25 +57,32 @@ const rowsWithErrorInfo = input
 function arraysAreSame(a: number[], b: number[]) {
   return a.length == b.length && a.every((i, index) => b[index] == i);
 }
-
-const part1 = rowsWithErrorInfo.reduce((sum, rowWithErrorInfo) => {
-  const positionsOfQuestionMark = getPositionsOfQuestionMarkInCharArray(
-    rowWithErrorInfo.row
-  );
-  const possibilities: number = getBinaryNumbersOfLengthN(
-    positionsOfQuestionMark.length
-  )
-    .map((replacementsForQuestionMark) => {
-      const newString = [...rowWithErrorInfo.row];
-      [...replacementsForQuestionMark].forEach((char, index) => {
-        newString[positionsOfQuestionMark[index]] = char;
-      });
-      return newString;
-    })
-    .filter((possibility) =>
-      arraysAreSame(calcErrorGroups(possibility), rowWithErrorInfo.errorInfo)
-    ).length;
-  return sum + possibilities;
-}, 0);
+function getCombinationSum(input: RowWithErrorInfo[]) {
+  const binaryMemoized = new Map<number, string[]>();
+  return rowsWithErrorInfo.reduce((sum, rowWithErrorInfo) => {
+    const positionsOfQuestionMark = getPositionsOfQuestionMarkInCharArray(
+      rowWithErrorInfo.row
+    );
+    const n = positionsOfQuestionMark.length;
+    let binary: string[] | undefined = binaryMemoized.get(n);
+    if (!binary) {
+      binary = getBinaryNumbersOfLengthN(n);
+      binaryMemoized.set(n, binary);
+    }
+    const possibilities: number = binary
+      .map((replacementsForQuestionMark) => {
+        const newString = [...rowWithErrorInfo.row];
+        [...replacementsForQuestionMark].forEach((char, index) => {
+          newString[positionsOfQuestionMark[index]] = char;
+        });
+        return newString;
+      })
+      .filter((possibility) =>
+        arraysAreSame(calcErrorGroups(possibility), rowWithErrorInfo.errorInfo)
+      ).length;
+    return sum + possibilities;
+  }, 0);
+}
+const part1 = getCombinationSum(rowsWithErrorInfo);
 
 console.log("part1", part1);
