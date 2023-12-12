@@ -1,5 +1,5 @@
 import { readFromFile } from "./util";
-const input: string[] = readFromFile("inputs/input12.txt");
+const input: string[] = readFromFile("inputs/test.txt");
 
 function calcErrorGroups(s: string[]) {
   return s
@@ -57,32 +57,44 @@ const rowsWithErrorInfo = input
 function arraysAreSame(a: number[], b: number[]) {
   return a.length == b.length && a.every((i, index) => b[index] == i);
 }
+
+function getAsString(charArray: string[]) {
+  return charArray.reduce((acc, cur) => acc + cur, "");
+}
+
+function getPossibilities(
+  rowWithErrorInfo: RowWithErrorInfo,
+  binaryMemoized?: Map<number, string[]>
+): number {
+  const positionsOfQuestionMark = getPositionsOfQuestionMarkInCharArray(
+    rowWithErrorInfo.row
+  );
+  const n = positionsOfQuestionMark.length;
+  let binary: string[] | undefined = binaryMemoized?.get(n);
+  if (!binary) {
+    binary = getBinaryNumbersOfLengthN(n);
+    binaryMemoized?.set(n, binary);
+  }
+  return binary
+    .map((replacementsForQuestionMark) => {
+      const newString = [...rowWithErrorInfo.row];
+      [...replacementsForQuestionMark].forEach((char, index) => {
+        newString[positionsOfQuestionMark[index]] = char;
+      });
+      return newString;
+    })
+    .filter((possibility) =>
+      arraysAreSame(calcErrorGroups(possibility), rowWithErrorInfo.errorInfo)
+    ).length;
+}
+
 function getCombinationSum(input: RowWithErrorInfo[]) {
   const binaryMemoized = new Map<number, string[]>();
-  return rowsWithErrorInfo.reduce((sum, rowWithErrorInfo) => {
-    const positionsOfQuestionMark = getPositionsOfQuestionMarkInCharArray(
-      rowWithErrorInfo.row
-    );
-    const n = positionsOfQuestionMark.length;
-    let binary: string[] | undefined = binaryMemoized.get(n);
-    if (!binary) {
-      binary = getBinaryNumbersOfLengthN(n);
-      binaryMemoized.set(n, binary);
-    }
-    const possibilities: number = binary
-      .map((replacementsForQuestionMark) => {
-        const newString = [...rowWithErrorInfo.row];
-        [...replacementsForQuestionMark].forEach((char, index) => {
-          newString[positionsOfQuestionMark[index]] = char;
-        });
-        return newString;
-      })
-      .filter((possibility) =>
-        arraysAreSame(calcErrorGroups(possibility), rowWithErrorInfo.errorInfo)
-      ).length;
-    return sum + possibilities;
+  return input.reduce((sum, rowWithErrorInfo) => {
+    return sum + getPossibilities(rowWithErrorInfo, binaryMemoized);
   }, 0);
 }
 const part1 = getCombinationSum(rowsWithErrorInfo);
-
 console.log("part1", part1);
+
+//7716 too low
