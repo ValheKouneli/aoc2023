@@ -1,5 +1,5 @@
 import { readFromFile } from "./util";
-const platform: string[] = readFromFile("inputs/test.txt");
+const platform: string[] = readFromFile("inputs/input14.txt");
 
 function turnPlatform90DegAntiClockwise(platform: string[]) {
   const newPlatform: string[] = [];
@@ -88,36 +88,19 @@ const part1 = platformTurned.reduce(
 console.log("part1", part1);
 
 let platformNow = platform;
-for (let i = 0; i < 999 * 4; i++) {
+let load = 0;
+for (let i = 0; i < 1000 * 4; i++) {
   platformNow = turnPlatform90DegClockwise(platformNow);
   platformNow = tiltPlatforEast(platformNow);
 
   const modulo = i % 4;
-  if (modulo == 0) {
-    console.log("\nTilted north", i);
-    const platformNorthSideUp = turnPlatform90DegAntiClockwise(platformNow);
-    printPlatform(platformNorthSideUp);
-    const load = getLoadOnNorthWithoutTilting(platformNorthSideUp);
-    console.log("load", load);
-  } else if (modulo == 1) {
-    console.log("\nTilted west", i);
-    const platformNorthSideUp = turnPlatform90DegAntiClockwise(
-      turnPlatform90DegAntiClockwise(platformNow)
-    );
-    printPlatform(platformNorthSideUp);
-    const load = getLoadOnNorthWithoutTilting(platformNorthSideUp);
-    console.log("load", load);
-  } else if (modulo == 2) {
-    console.log("\nTilted south", i);
-    const platformNorthSideUp = turnPlatform90DegClockwise(platformNow);
-    printPlatform(platformNorthSideUp);
-    const load = getLoadOnNorthWithoutTilting(platformNorthSideUp);
-    console.log("load", load);
-  } else if (modulo == 3) {
-    console.log("\nTilted east", i);
+
+  if (modulo == 3) {
     const platformNorthSideUp = platformNow;
-    printPlatform(platformNorthSideUp);
-    const load = getLoadOnNorthWithoutTilting(platformNorthSideUp);
-    console.log("load", load);
+    load = getLoadOnNorthWithoutTilting(platformNorthSideUp);
+    console.log((i + 1) / 4, "load", load);
   }
 }
+
+// Found a cycle of 8 by visual inspection, and (1000000000 - 1000)%8 = 0
+console.log("part2", load);
