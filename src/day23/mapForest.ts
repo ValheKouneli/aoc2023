@@ -58,7 +58,15 @@ function findNextMovement(
   return nextPosition;
 }
 
-export function mapForest(forest: Forest, start: Place, end: Place): ForestMap {
+export function mapForest(
+  forest: Forest,
+  start: Place,
+  end: Place,
+  branchFromNode: (
+    forest: Forest,
+    node: PositionWithHistory
+  ) => PositionWithHistory[]
+): ForestMap {
   const forestMap = new Map<string, Link[]>();
   const nodesToHandle: PositionWithHistory[] = [
     { position: start, directionJustTravelled: Direction.DOWN, steps: 0 },
@@ -76,11 +84,16 @@ export function mapForest(forest: Forest, start: Place, end: Place): ForestMap {
         start,
         end
       );
+
       setToForestMap(forestMap, nodeToHandle.position, {
         node: nextNode.position,
         length: nextNode.steps,
       });
-      if (!getFromForestMap(forestMap, nextNode.position)) {
+      const nodeIsAlreadyInMap = !!getFromForestMap(
+        forestMap,
+        nextNode.position
+      );
+      if (!nodeIsAlreadyInMap) {
         nodesToHandle.push({ ...nextNode, steps: 0 });
       }
     });
@@ -88,7 +101,7 @@ export function mapForest(forest: Forest, start: Place, end: Place): ForestMap {
   return forestMap;
 }
 
-function branchFromNode(
+export function branchFromNodePt2(
   forest: Forest,
   node: PositionWithHistory
 ): PositionWithHistory[] {
@@ -97,5 +110,23 @@ function branchFromNode(
     .filter((position: PositionWithHistory) => {
       const groundType = readGroundType(forest, position.position);
       return groundType && [">", "v", "."].includes(groundType);
+    });
+}
+
+export function branchFromNodePt1(
+  forest: Forest,
+  node: PositionWithHistory
+): PositionWithHistory[] {
+  return getDirectionsAwayFromWhereICame(node.directionJustTravelled)
+    .map((direction: Direction) => getPositionInDirection(node, direction))
+    .filter((position: PositionWithHistory) => {
+      const groundType = readGroundType(forest, position.position);
+      return (
+        ![Direction.UP, Direction.LEFT].includes(
+          position.directionJustTravelled
+        ) &&
+        groundType &&
+        [">", "v", "."].includes(groundType)
+      );
     });
 }

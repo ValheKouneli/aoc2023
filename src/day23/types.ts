@@ -32,4 +32,6 @@ export enum Direction {
   RIGHT = "RIGHT",
 }
 
+export type Path = Link[];
+
 export type PlaceWithDirection = Place & { direction: Direction };

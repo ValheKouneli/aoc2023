@@ -1,4 +1,5 @@
 import { ForestMap, Link, Place } from "./types";
+import { isSamePlace } from "./util";
 
 export function getFromForestMap(
   forestMap: ForestMap,
@@ -14,6 +15,12 @@ export function setToForestMap(
 ): void {
   const currentValue: Link[] =
     forestMap.get(`row${node.row}col${node.col}`) || [];
-  currentValue.push(value);
-  forestMap.set(`row${node.row}col${node.col}`, currentValue);
+  if (!nodeIsAlreadyInList(currentValue, value.node)) {
+    currentValue.push(value);
+    forestMap.set(`row${node.row}col${node.col}`, currentValue);
+  }
+}
+
+function nodeIsAlreadyInList(list: Link[], node: Place) {
+  return list.some((link) => isSamePlace(link.node, node));
 }
