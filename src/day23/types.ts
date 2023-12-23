@@ -8,13 +8,6 @@ export type Link = {
   length: number;
 };
 
-export type LinkWithDirection = Link & { direction: Direction };
-
-export type Movement = {
-  newPlace: Place;
-  direction: Direction;
-};
-
 export type PositionWithHistory = {
   position: Place;
   directionJustTravelled: Direction;
@@ -33,5 +26,3 @@ export enum Direction {
 }
 
 export type Path = Link[];
-
-export type PlaceWithDirection = Place & { direction: Direction };
