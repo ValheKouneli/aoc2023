@@ -1,7 +1,7 @@
 import { readFromFile } from "../util";
 import { LineData } from "./types";
 import { linesCrossInAreaInFuture } from "./util";
-const input: string[] = readFromFile("inputs/test.txt");
+const input: string[] = readFromFile("inputs/input24.txt");
 
 const lineData: LineData[] = input.map((row) => {
   const [positions, deltas] = row.split(" @ ");
@@ -37,8 +37,9 @@ function getXYCrossingPointsInArea(
   return crossingPointsInArea;
 }
 
-const part1 = getXYCrossingPointsInArea(lineData, 7, 27);
+const part1 = getXYCrossingPointsInArea(
+  lineData,
+  200000000000000,
+  400000000000000
+);
 console.log("part1", part1);
-
-// 469 too low
-// 472 too low
