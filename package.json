@@ -20,7 +20,8 @@
     "day12": "ts-node src/day12.ts",
     "day13": "ts-node src/day13.ts",
     "day14": "ts-node src/day14.ts",
-    "day23": "ts-node src/day23/index.ts"
+    "day23": "ts-node src/day23/index.ts",
+    "day24": "ts-node src/day24/index.ts"
   },
   "keywords": [],
   "author": "",
